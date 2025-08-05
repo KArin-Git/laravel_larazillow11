@@ -3,13 +3,17 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "fix:eslint": "eslint --ext .js,.vue resources/js --fix"
     },
     "devDependencies": {
+        "@eslint/js": "^9.32.0",
         "@vitejs/plugin-vue": "^5.2.4",
         "autoprefixer": "^10.4.20",
         "axios": "^1.7.4",
         "concurrently": "^9.0.1",
+        "eslint": "^9.32.0",
+        "eslint-plugin-vue": "^10.4.0",
         "laravel-vite-plugin": "^1.2.0",
         "postcss": "^8.4.47",
         "tailwindcss": "^3.4.13",
