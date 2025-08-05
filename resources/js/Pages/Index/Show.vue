@@ -1,9 +1,14 @@
 <template>
-    <MainLayout>
-        <div>Show</div>
-    </MainLayout>
+    <div>Show</div>
 </template>
 
 <script setup>
+
+</script>
+
+<script>
 import MainLayout from '../../Layouts/MainLayout.vue';
+export default {
+    layout: MainLayout
+}
 </script>
