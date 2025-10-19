@@ -33,7 +33,7 @@
 
       <div>
         <label>Street Nr</label>
-        <input v-model.number="form.street_nr" type="text" />
+        <input v-model.number="form.street_number" type="text" />
       </div>
 
       <div>
@@ -58,7 +58,7 @@ const form = useForm({
   city: null,
   street: null,
   code: null,
-  street_nr: null,
+  street_number: null,
   price: 0,
 })
 const create = () => form.post('/listing')

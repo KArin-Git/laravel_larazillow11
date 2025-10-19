@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Listing;
+use League\CommonMark\Extension\CommonMark\Node\Block\ListItem;
 
 class ListingController extends Controller
 {
@@ -33,7 +34,9 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Listing::create($request->all());
+        return redirect()->route('listing.index')
+        ->with('success', 'Listing was created successfully.');
     }
 
     /**
