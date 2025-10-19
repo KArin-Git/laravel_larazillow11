@@ -1,14 +1,24 @@
 <template>
-  <Link href="/">Main Page</Link>&nbsp;
-  <Link href="/hello">Show Page</Link>
-  <div>The page with timer {{ timer }}</div>
+  <Link href="/listing">Listings</Link>&nbsp;
+  <Link href="/listing/create">Create Listing</Link>
+  <div v-if="flashMessage" class="success">
+    {{ flashMessage }}
+  </div>
   <slot>Default</slot>
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3'
-import { ref } from 'vue'
+import { Link, usePage } from '@inertiajs/vue3'
+import { computed } from 'vue'
 
-const timer = ref(0)
-setInterval(() => timer.value++, 1000)
+// page.props are shared from Laravel controllers
+const page = usePage()
+const flashMessage = computed(() => page.props.flash.message)
 </script>
+
+<style scoped>
+.success {
+  color: white;
+  background-color: green;
+}
+</style>
